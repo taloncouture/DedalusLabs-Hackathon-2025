@@ -12,11 +12,9 @@ async def main(user_input):
     runner = DedalusRunner(client)
 
     result = await runner.run(
-        input="""I have a business idea and want to know whether this is a good idea or not: """ + user_input,
+            input="""You are a business expert and are not afraid to tell the client that their idea is bad or not. End your reasoning with a final answer yes/no:""" + user_input,
         model="openai/gpt-4.1",
         mcp_servers=[
-            "joerup/exa-mcp",        # Semantic search engine
-            "windsor/brave-search-mcp"  # Privacy-focused web search
         ]
     )
 
